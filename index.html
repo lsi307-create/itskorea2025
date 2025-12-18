@@ -21,7 +21,6 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* 모바일 탭 터치감 개선 */
         .tab-btn {
             position: relative;
             transition: all 0.2s;
@@ -44,20 +43,21 @@
             border-radius: 10px;
         }
 
-        /* 카드 및 버튼 모바일 최적화 */
-        .admin-btn { 
+        .nav-link-btn { 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 1.25rem 0.75rem;
+            padding: 1.25rem 0.5rem;
             border-radius: 1.25rem;
             font-size: 0.85rem;
+            font-weight: 700;
             line-height: 1.2;
             transition: transform 0.1s active;
+            text-decoration: none;
         }
-        .admin-btn:active { transform: scale(0.96); }
+        .nav-link-btn:active { transform: scale(0.96); }
 
         .guide-card { 
             background: white; 
@@ -67,7 +67,6 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         
-        /* 발표 순서 대시보드 모바일 커스텀 */
         .order-dashboard {
             background: white;
             border: 1px solid #e2e8f0;
@@ -92,7 +91,6 @@
             border: 1px solid #f1f5f9;
         }
 
-        /* 애니메이션 */
         .fade-in { animation: fadeIn 0.3s ease-out; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -102,43 +100,43 @@
 </head>
 <body class="pb-12">
 
-    <!-- 헤더 영역: 모바일 가독성 향상 -->
-    <header class="bg-slate-900 text-white pt-10 pb-16 px-6 relative overflow-hidden">
+    <!-- Header -->
+    <header class="bg-slate-900 text-white pt-10 pb-16 px-6 relative overflow-hidden text-center">
         <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-transparent"></div>
-        <div class="max-w-2xl mx-auto relative z-10 text-center">
+        <div class="max-w-2xl mx-auto relative z-10">
             <h1 class="text-2xl font-extrabold tracking-tight mb-2">2025 ITS KOREA 송년회</h1>
             <p class="text-slate-300 text-sm mb-6">함께한 2025, 함께할 2026 - 화합과 도약의 밤</p>
             <div class="inline-flex items-center gap-3 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10">
                 <span class="text-sm font-bold">12. 19. (금) 15:00</span>
                 <span class="w-px h-3 bg-white/30"></span>
-                <span class="text-sm">안산 본사 대강당</span>
+                <span class="text-sm">안산 1층 대강당</span>
             </div>
         </div>
     </header>
 
-    <!-- 관리 도구: 모바일 2열 그리드 고정 -->
+    <!-- Navigation Banner Links -->
     <div class="max-w-2xl mx-auto px-4 -mt-10 relative z-20">
         <div class="bg-white rounded-3xl shadow-2xl p-4 border border-slate-100 grid grid-cols-2 gap-3">
-            <button onclick="window.open('발표순서뽑기_251218.html')" class="admin-btn bg-blue-600 text-white shadow-lg shadow-blue-200">
-                <i class="fa-solid fa- dice text-xl"></i>
-                <span class="font-bold">발표 순서 추첨</span>
-            </button>
-            <button onclick="window.open('럭키드로우6문제_251219.html')" class="admin-btn bg-cyan-600 text-white shadow-lg shadow-cyan-200">
-                <i class="fa-solid fa-lightbulb text-xl"></i>
-                <span class="font-bold">레크리에이션</span>
-            </button>
-            <button onclick="window.open('경품추첨_사다리타기.html')" class="admin-btn bg-amber-500 text-white shadow-lg shadow-amber-200">
-                <i class="fa-solid fa-gift text-xl"></i>
-                <span class="font-bold">경품 사다리타기</span>
-            </button>
-            <button onclick="window.open('송년회자리배치랜덤fianl(자리배치ppt띄우기).html')" class="admin-btn bg-indigo-600 text-white shadow-lg shadow-indigo-200">
-                <i class="fa-solid fa-chair text-xl"></i>
-                <span class="font-bold">랜덤 자리배치</span>
-            </button>
+            <a href="https://forms.gle/mkSiuwE39rMVzagk9" target="_blank" class="nav-link-btn bg-blue-600 text-white shadow-lg shadow-blue-200">
+                <i class="fa-solid fa-user-check text-xl"></i>
+                <span>송년회 출석체크</span>
+            </a>
+            <a href="https://padlet.com/lsi307/padlet-sdsfw8kll95174aj" target="_blank" class="nav-link-btn bg-indigo-600 text-white shadow-lg shadow-indigo-200">
+                <i class="fa-solid fa-comments text-xl"></i>
+                <span>실시간 소통</span>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1Iw4ajcHLG1ONoz2X9anU67DGYii74bEh?usp=sharing" target="_blank" class="nav-link-btn bg-cyan-600 text-white shadow-lg shadow-cyan-200">
+                <i class="fa-solid fa-file-pdf text-xl"></i>
+                <span>발표자료 확인</span>
+            </a>
+            <a href="https://forms.gle/oGiwMhxux9pj5DbM8" target="_blank" class="nav-link-btn bg-amber-500 text-white shadow-lg shadow-amber-200">
+                <i class="fa-solid fa-square-poll-vertical text-xl"></i>
+                <span>우수팀 투표</span>
+            </a>
         </div>
     </div>
 
-    <!-- 네비게이션: 터치 최적화 -->
+    <!-- Tab Navigation -->
     <nav class="sticky top-0 bg-white/90 backdrop-blur-md border-b z-50 mt-6 shadow-sm">
         <div class="max-w-2xl mx-auto flex justify-around">
             <button onclick="showTab('timeline')" id="btn-timeline" class="tab-btn tab-active">행사 일정</button>
@@ -156,54 +154,53 @@
                     <i class="fa-solid fa-clock-rotate-left text-blue-600"></i> Program Timeline
                 </h2>
                 <div class="space-y-10 border-l-2 border-blue-50 ml-2 pl-6 relative">
-                    
                     <div class="relative">
                         <div class="absolute -left-[33px] top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm"></div>
                         <span class="text-[10px] font-extrabold text-blue-600 bg-blue-50 px-2 py-0.5 rounded uppercase tracking-tighter">15:00 - 15:10</span>
                         <p class="font-bold text-slate-800 mt-1">행사 소개 및 진행 안내</p>
-                        <p class="timeline-desc text-xs mt-1">개회사 및 내빈 소개 포함</p>
+                        <p class="text-xs mt-1 text-slate-500">• 안산 1층 대강당</p>
                     </div>
 
                     <div class="relative">
                         <div class="absolute -left-[33px] top-1 w-4 h-4 rounded-full bg-slate-300 border-4 border-white shadow-sm"></div>
                         <span class="text-[10px] font-extrabold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">15:10 - 15:40</span>
-                        <p class="font-bold text-slate-800 mt-1 text-base">기념 사진 촬영</p>
-                        <p class="timeline-desc text-xs mt-1">전체 및 본부별 순차 촬영 진행</p>
+                        <p class="font-bold text-slate-800 mt-1">기념 사진 촬영</p>
+                        <p class="text-xs mt-1 text-slate-500">• 전 임직원 단체 촬영 및 본부별 사진 촬영</p>
                     </div>
 
                     <div class="relative">
                         <div class="absolute -left-[33px] top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm"></div>
                         <span class="text-[10px] font-extrabold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">15:40 - 16:30</span>
                         <p class="font-bold text-slate-800 mt-1">팀별 성과 발표 (1부)</p>
-                        <p class="timeline-desc text-xs mt-1">팀별 5분 내 핵심 위주 발표</p>
+                        <p class="text-xs mt-1 text-slate-500">• 발표 순서 추첨 및 방식 안내 (팀당 5분)</p>
                     </div>
 
                     <div class="relative">
                         <div class="absolute -left-[33px] top-1 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow-sm"></div>
                         <span class="text-[10px] font-extrabold text-amber-600 bg-amber-50 px-2 py-0.5 rounded italic">16:30 - 16:50</span>
                         <p class="font-bold text-amber-600 mt-1">중간 휴식 및 경품 추첨</p>
-                        <p class="timeline-desc text-xs mt-1">휴식 10분, 경품 추첨 20분</p>
+                        <p class="text-xs mt-1 text-amber-500">• 경품 추첨 게임 진행</p>
                     </div>
 
                     <div class="relative">
                         <div class="absolute -left-[33px] top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm"></div>
                         <span class="text-[10px] font-extrabold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">16:50 - 17:30</span>
                         <p class="font-bold text-slate-800 mt-1">팀별 성과 발표 (2부)</p>
-                        <p class="timeline-desc text-xs mt-1">잔여 팀 성과 공유</p>
+                        <p class="text-xs mt-1 text-slate-500">• 나머지 팀 성과 발표 및 실시간 투표 진행</p>
                     </div>
 
                     <div class="relative">
                         <div class="absolute -left-[33px] top-1 w-4 h-4 rounded-full bg-green-600 border-4 border-white shadow-sm"></div>
-                        <span class="text-[10px] font-extrabold text-green-600 bg-green-50 px-2 py-0.5 rounded tracking-tighter uppercase">17:30 - 18:00</span>
+                        <span class="text-[10px] font-extrabold text-green-600 bg-green-50 px-2 py-0.5 rounded tracking-tighter">17:30 - 18:00</span>
                         <p class="font-bold text-slate-800 mt-1">시상 및 폐회사</p>
-                        <p class="timeline-desc text-xs mt-1">공로상 및 우수팀 시상 진행</p>
+                        <p class="text-xs mt-1 text-slate-500">• 장기근속 공로상 및 우수발표팀 시상</p>
                     </div>
 
                     <div class="relative">
                         <div class="absolute -left-[33px] top-1 w-4 h-4 rounded-full bg-indigo-700 border-4 border-white shadow-sm"></div>
                         <span class="text-[10px] font-extrabold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded">18:00 -</span>
                         <p class="font-bold text-slate-800 mt-1">자리추첨 및 식사 이동</p>
-                        <p class="timeline-desc text-xs mt-1 italic">무작위 추첨 후 지정 장소 이동</p>
+                        <p class="text-xs mt-1 text-slate-500">• 저녁 식사 장소 좌석 랜덤 추첨 후 이동</p>
                     </div>
                 </div>
             </div>
@@ -211,15 +208,15 @@
 
         <!-- Tab 2: Guide -->
         <section id="tab-guide" class="hidden fade-in space-y-4">
+            <!-- 사전 촬영 섹션 -->
             <div class="guide-card">
                 <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-camera-retro text-blue-600"></i> 촬영 순서 안내
+                    <i class="fa-solid fa-camera text-blue-600"></i> 1. 사전 촬영
                 </h3>
-                <div class="space-y-3">
-                    <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100">
-                        <p class="font-bold text-blue-800 text-sm mb-3 underline decoration-blue-200 underline-offset-4">1. 사전 촬영 (15:10~)</p>
-                        <div class="grid grid-cols-2 gap-y-1.5 text-xs text-blue-700">
-                            <p>① 전체 (전 임직원)</p>
+                <div class="bg-blue-50/50 p-4 rounded-2xl border border-blue-100">
+                    <div class="grid grid-cols-1 gap-y-2 text-sm text-slate-700">
+                        <p class="font-bold text-blue-800">① 전체 (전 임직원)</p>
+                        <div class="grid grid-cols-2 gap-y-1 pl-4 text-xs text-slate-600">
                             <p>② 상생협력본부</p>
                             <p>③ 표준인증본부</p>
                             <p>④ 사업지원본부</p>
@@ -230,76 +227,56 @@
                             <p>⑨ SmartX 실증단</p>
                         </div>
                     </div>
-                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
-                        <p class="font-bold text-slate-700 text-sm mb-3 underline decoration-slate-300 underline-offset-4">2. 시상 촬영 (18:00~)</p>
-                        <div class="space-y-2 text-xs text-slate-600">
-                            <p><span class="inline-block w-4">🏆</span> <b>장기근속 공로상</b> 시상 및 촬영</p>
-                            <p><span class="inline-block w-4">✨</span> <b>발표 우수팀</b> (공로상 > 우수팀 순)</p>
-                        </div>
-                    </div>
                 </div>
             </div>
 
+            <!-- 시상 촬영 섹션 -->
             <div class="guide-card">
                 <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-circle-info text-blue-600"></i> 중요 안내
+                    <i class="fa-solid fa-trophy text-amber-500"></i> 2. 시상 촬영
+                </h3>
+                <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-100 space-y-3">
+                    <p class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                        <span class="text-lg">🏆</span> 장기근속 공로상 시상 및 촬영
+                    </p>
+                    <p class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                        <span class="text-lg">✨</span> 발표 우수팀 (공로상 > 우수팀 순)
+                    </p>
+                </div>
+            </div>
+
+            <!-- 중요 안내 섹션 -->
+            <div class="guide-card border-l-4 border-l-red-500">
+                <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-exclamation text-red-500"></i> 중요 안내
                 </h3>
                 <div class="space-y-4">
-                    <div class="flex gap-3">
-                        <div class="flex-shrink-0 w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
-                            <i class="fa-solid fa-stopwatch"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm font-bold text-slate-800">시간 엄수</p>
-                            <p class="text-xs text-slate-500 leading-relaxed">원활한 진행을 위해 발표는 5분 이내로 핵심 위주 공유 부탁드립니다.</p>
-                        </div>
+                    <div>
+                        <p class="text-sm font-bold text-slate-800 mb-1 text-red-600">⏰ 시간 엄수</p>
+                        <p class="text-xs text-slate-500 leading-relaxed pl-6">원활한 진행을 위해 발표는 5분 이내로 핵심 위주 공유 부탁드립니다.</p>
                     </div>
-                    <div class="flex gap-3">
-                        <div class="flex-shrink-0 w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center text-amber-600">
-                            <i class="fa-solid fa-square-check"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm font-bold text-slate-800">공정 평가</p>
-                            <p class="text-xs text-slate-500 leading-relaxed">우수팀 투표 시 본인 팀은 제외됩니다. 신중한 투표 부탁드립니다.</p>
-                        </div>
+                    <div>
+                        <p class="text-sm font-bold text-slate-800 mb-1 text-blue-700">⚖️ 공정 평가</p>
+                        <p class="text-xs text-slate-500 leading-relaxed pl-6">우수팀 투표 시 본인 팀은 제외됩니다. 신중한 투표 부탁드립니다.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tab 3: Evaluation -->
+        <!-- Tab 3: Order -->
         <section id="tab-rules" class="hidden fade-in space-y-4">
-            <!-- QR 코드 -->
-            <div class="guide-card flex flex-col items-center py-8">
-                <div class="text-center mb-6">
-                    <h3 class="font-bold text-slate-800 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-file-pdf text-red-500"></i> 발표자료 확인
-                    </h3>
-                    <p class="text-[11px] text-slate-500 mt-1 underline underline-offset-2">QR을 스캔하거나 하단 버튼을 누르세요</p>
-                </div>
-                <div class="bg-white p-4 rounded-3xl border-4 border-slate-50 shadow-inner mb-6">
-                    <img src="발표자료QR.png" alt="발표자료 QR" class="w-40 h-40" onerror="this.src='https://placehold.co/200x200?text=QR+Code'">
-                </div>
-                <a href="https://drive.google.com/drive/folders/1Iw4ajcHLG1ONoz2X9anU67DGYii74bEh?usp=sharing" target="_blank" 
-                   class="w-full bg-blue-600 text-white text-center py-3 rounded-xl font-bold text-sm shadow-lg shadow-blue-100">
-                   자료 드라이브 바로가기
-                </a>
-            </div>
-
-            <!-- 순서 대시보드 -->
             <div class="order-dashboard shadow-md">
                 <div class="p-4 bg-slate-50 border-b border-slate-100 flex justify-between items-center">
-                    <span class="text-sm font-bold text-slate-800 tracking-tight">실시간 발표 순서</span>
-                    <label for="txt-upload" class="bg-slate-800 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold">
-                        <i class="fa-solid fa-plus mr-1"></i> 파일 불러오기
+                    <span class="text-sm font-bold text-slate-800">실시간 발표 순서</span>
+                    <label for="txt-upload" class="bg-slate-800 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold cursor-pointer">
+                        <i class="fa-solid fa-plus mr-1"></i> 순서 파일 로드
                     </label>
                     <input type="file" id="txt-upload" accept=".txt" class="hidden" onchange="handleFileSelect(event)">
                 </div>
-
                 <div id="order-container" class="order-list">
                     <div id="empty-state" class="flex flex-col items-center justify-center py-12 text-slate-300">
                         <i class="fa-solid fa-list-ol text-4xl mb-3 opacity-20"></i>
-                        <p class="text-xs font-medium">순서 추첨 결과가 아직 없습니다.</p>
+                        <p class="text-xs font-medium">업로드된 순서가 없습니다.</p>
                     </div>
                     <div id="order-items-grid" class="hidden space-y-2"></div>
                 </div>
@@ -308,20 +285,13 @@
 
     </main>
 
-    <!-- 바닥글 추가 정보 -->
-    <footer class="mt-8 px-6 text-center">
-        <p class="text-[10px] text-slate-400 font-medium">오류 제보: '무엇이든 물어보살' 패들렛</p>
-    </footer>
-
     <script>
         function showTab(tabId) {
-            const sections = ['timeline', 'guide', 'rules'];
-            sections.forEach(s => {
+            ['timeline', 'guide', 'rules'].forEach(s => {
                 document.getElementById('tab-' + s).classList.add('hidden');
                 document.getElementById('btn-' + s).classList.remove('tab-active');
                 document.getElementById('btn-' + s).classList.add('text-slate-400');
             });
-            
             document.getElementById('tab-' + tabId).classList.remove('hidden');
             document.getElementById('btn-' + tabId).classList.add('tab-active');
             document.getElementById('btn-' + tabId).classList.remove('text-slate-400');
@@ -331,23 +301,18 @@
         function handleFileSelect(event) {
             const file = event.target.files[0];
             if (!file) return;
-
             const reader = new FileReader();
             reader.onload = function(e) {
                 const text = e.target.result;
                 const container = document.getElementById('order-items-grid');
                 const emptyState = document.getElementById('empty-state');
                 const lines = text.split('\n').map(l => l.trim()).filter(l => l !== '');
-                
                 if (lines.length > 0) {
                     emptyState.classList.add('hidden');
                     container.classList.remove('hidden');
                     container.innerHTML = '';
                     lines.forEach((line, index) => {
-                        let teamName = line;
-                        if (line.includes('.')) {
-                            teamName = line.split('.').slice(1).join('.').trim();
-                        }
+                        let teamName = line.includes('.') ? line.split('.').slice(1).join('.').trim() : line;
                         const item = document.createElement('div');
                         item.className = 'order-item fade-in';
                         item.innerHTML = `
